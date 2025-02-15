@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formula Sheet Hub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+  <style>
+    .filter-box {
+      display: none;
+      position: relative;
+      background-color: #2b2b2b;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .filter-box label {
+      display: block;
+      margin-bottom: 5px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="assets/icons/flask-icon.png" alt="Formula Sheet Hub Icon" class="logo-icon">
+      Formula Sheet Hub
+    </div>
+    <button class="create-btn" onclick="openModal()">+ Create a formula sheet</button>
+  </header>
+
+  <main>
+    <!-- Search Bar with Filter Box Below -->
+    <section class="search-section">
+      <input type="text" class="search-input" placeholder="Search for formula sheets...">
+      <button class="search-btn" onclick="toggleFilterBox()">
+        <img src="assets/icons/filter-icon.png" alt="Filter Icon" class="filter-icon">
+      </button>
+      <div id="filterBox" class="filter-box">
+        <label><input type="checkbox" name="subject" value="Math"> Math</label>
+            <label><input type="checkbox" name="subject" value="Physics"> Physics</label>
+            <label><input type="checkbox" name="subject" value="Chemistry"> Chemistry</label>
+            <label><input type="checkbox" name="subject" value="Engineering"> Engineering</label>
+            <label><input type="checkbox" name="subject" value="Biology"> Biology</label>
+            <label><input type="checkbox" name="subject" value="KinesiologySportRecreation"> Kinesiology & Sports</label>
+            <label><input type="checkbox" name="subject" value="Language"> Language</label>
+            <label><input type="checkbox" name="subject" value="LinguisticsLiterature"> Linguistics & Literature</label>
+            <label><input type="checkbox" name="subject" value="BusinessAccounting"> Business & Accounting</label>
+            <label><input type="checkbox" name="subject" value="Agricultural"> Agricultural</label>
+            <label><input type="checkbox" name="subject" value="MedicineAnatomy"> Medicine & Anatomy</label>
+            <label><input type="checkbox" name="subject" value="AnimalScience"> Animal Science</label>
+            <label><input type="checkbox" name="subject" value="FineArts"> Fine Arts</label>
+            <label><input type="checkbox" name="subject" value="Law"> Law</label>
+            <label><input type="checkbox" name="subject" value="Education"> Education</label>
+            <label><input type="checkbox" name="subject" value="Humanities"> Humanities</label>
+            <label><input type="checkbox" name="subject" value="SocialScience"> Social Science</label>
+            <label><input type="checkbox" name="subject" value="HistoryClassicsReligion"> History & Classics </label>
+      </div>
+      <select id="sortFilter" onchange="sortFormulas()">
+        <option value="mostRecent">Most Recent</option>
+        <option value="alphabetical">Alphabetical</option>
+      </select>
+    </section>
+
+    <!-- Your Formula Sheets Section -->
+    <section class="your-sheets">
+      <h2>Your Formula Sheets</h2>
+      <div class="sheet-container">
+        <div class="sheet-card">
+          <div class="sheet-preview"></div>
+          <h3 class="sheet-title">MATH 201</h3>
+          <p class="sheet-description">Integrals, derivatives, etc.</p>
+        </div>
+        <div class="sheet-card">
+          <div class="sheet-preview"></div>
+          <h3 class="sheet-title">Physics Formula Sheet</h3>
+          <p class="sheet-description">Forces and hydraulics</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleFilterBox() {
+      const filterBox = document.getElementById("filterBox");
+      filterBox.style.display = filterBox.style.display === "block" ? "none" : "block";
+    }
+    
+    window.onclick = function(event) {
+      if (!event.target.matches('.search-btn') && !event.target.closest('#filterBox')) {
+        const filterBox = document.getElementById("filterBox");
+        if (filterBox.style.display === "block") {
+          filterBox.style.display = "none";
+        }
+      }
+    };
+
+    function sortFormulas() {
+      let formulaList = document.querySelectorAll(".sheet-card");
+      let sortType = document.getElementById("sortFilter").value;
+      let container = document.querySelector(".sheet-container");
+      
+      let sortedList = Array.from(formulaList).sort((a, b) => {
+        if (sortType === "alphabetical") {
+          return a.querySelector(".sheet-title").innerText.localeCompare(b.querySelector(".sheet-title").innerText);
+        }
+        return 0; // Add additional sorting logic for "most recent" if necessary
+      });
+      
+      container.innerHTML = "";
+      sortedList.forEach(sheet => container.appendChild(sheet));
+    }
+  </script>
+</body>
+</html>

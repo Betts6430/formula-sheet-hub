@@ -8,6 +8,15 @@ function closeModal() {
     document.getElementById("createSheetModal").style.display = "none";
 }
 
+// Detect Enter key press in the formula input
+document.getElementById("formulaInput").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent the form from submitting
+      addFormula(); // Call the addFormula function
+    }
+  });
+  
+
 // Add a formula to the formula list
 function addFormula() {
     const formulaInput = document.getElementById("formulaInput");
@@ -29,7 +38,7 @@ function createAndAddFormulaSheet() {
 
     if (title && description && formulas.length > 0) {
         createFormulaSheetCard(title, description, formulas);
-        alert("Formula sheet created successfully!");
+        alert("Formula sheet created successfully!");  //REMOVE LATER
 
         // Reset the form and formula list
         document.getElementById("formulaSheetForm").reset();

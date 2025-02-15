@@ -4,6 +4,7 @@ function openModal() {
 
 function closeModal() {
     document.getElementById("createSheetModal").style.display = "none";
+    document.getElementById("createSheetModal").removeAttribute("data-editing");
 }
 
 
@@ -30,6 +31,35 @@ function addFormula() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const savedSheets = JSON.parse(localStorage.getItem("formulaSheets")) || [];
+    savedSheets.forEach(sheet => createFormulaSheetCard(sheet));
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const editId = urlParams.get('edit');
+
+    if (editId) {
+        const sheetToEdit = savedSheets.find(sheet => sheet.id === editId);
+        if (sheetToEdit) {
+            openModal();
+            prefillModal(sheetToEdit);
+            document.getElementById("createSheetModal").dataset.editing = editId; // Add editing flag
+        }
+    }
+});
+
+function prefillModal(sheet) {
+    document.getElementById("title").value = sheet.title;
+    document.getElementById("description").value = sheet.description;
+    document.getElementById("formulaList").innerHTML = "";
+
+    sheet.formulas.forEach(formula => {
+        const li = document.createElement("li");
+        li.textContent = formula;
+        document.getElementById("formulaList").appendChild(li);
+    });
+}
+
 function createAndAddFormulaSheet() {
     const title = document.getElementById("title").value.trim();
     const description = document.getElementById("description").value.trim();
@@ -43,8 +73,24 @@ function createAndAddFormulaSheet() {
         const existingSheets = JSON.parse(localStorage.getItem("formulaSheets")) || [];
         existingSheets.push(newSheet);
         localStorage.setItem("formulaSheets", JSON.stringify(existingSheets));
+        const editingId = document.getElementById("createSheetModal").dataset.editing;
+        let savedSheets = JSON.parse(localStorage.getItem("formulaSheets")) || [];
 
-        createFormulaSheetCard(newSheet);
+        if (editingId) {
+            // Edit existing sheet
+            const sheetIndex = savedSheets.findIndex(sheet => sheet.id === editingId);
+            if (sheetIndex !== -1) {
+                savedSheets[sheetIndex] = { id: editingId, title, description, formulas };
+            }
+            document.getElementById("createSheetModal").removeAttribute("data-editing");
+        } else {
+            // Create new sheet
+            const id = Date.now().toString();
+            savedSheets.push({ id, title, description, formulas });
+        }
+
+        localStorage.setItem("formulaSheets", JSON.stringify(savedSheets));
+        refreshFormulaSheets();
         closeModal();
         document.getElementById("formulaSheetForm").reset();
         document.getElementById("formulaList").innerHTML = "";
@@ -70,7 +116,9 @@ function createFormulaSheetCard(sheet) {
     formulaContainer.appendChild(newCard);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function refreshFormulaSheets() {
     const savedSheets = JSON.parse(localStorage.getItem("formulaSheets")) || [];
+    const formulaContainer = document.querySelector(".your-sheets .sheet-container");
+    formulaContainer.innerHTML = "";
     savedSheets.forEach(sheet => createFormulaSheetCard(sheet));
-});
+}

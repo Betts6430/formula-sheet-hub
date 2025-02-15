@@ -1,14 +1,11 @@
-// Open the modal
 function openModal() {
     document.getElementById("createSheetModal").style.display = "block";
 }
 
-// Close the modal
 function closeModal() {
     document.getElementById("createSheetModal").style.display = "none";
 }
 
-// Add a formula to the formula list
 function addFormula() {
     const formulaInput = document.getElementById("formulaInput");
     const formulaList = document.getElementById("formulaList");
@@ -17,32 +14,30 @@ function addFormula() {
         const li = document.createElement("li");
         li.textContent = formulaInput.value;
         formulaList.appendChild(li);
-        formulaInput.value = ""; // Clear the input field
+        formulaInput.value = "";
     }
 }
 
-// Create and add a formula sheet to "Your Formula Sheets"
 function createAndAddFormulaSheet() {
     const title = document.getElementById("title").value.trim();
     const description = document.getElementById("description").value.trim();
     const formulas = Array.from(document.querySelectorAll("#formulaList li")).map(li => li.textContent);
 
     if (title && description && formulas.length > 0) {
-        createFormulaSheetCard(title, description, formulas);
-        alert("Formula sheet created successfully!");
+        const id = Date.now().toString();
+        const newSheet = { id, title, description, formulas };
+        const existingSheets = JSON.parse(localStorage.getItem("formulaSheets")) || [];
+        existingSheets.push(newSheet);
+        localStorage.setItem("formulaSheets", JSON.stringify(existingSheets));
 
-        // Reset the form and formula list
+        createFormulaSheetCard(newSheet);
+        closeModal();
         document.getElementById("formulaSheetForm").reset();
         document.getElementById("formulaList").innerHTML = "";
-
-        closeModal();
-    } else {
-        alert("Please fill out all fields and add at least one formula.");
     }
 }
 
-// Create and display a formula sheet card in "Your Formula Sheets"
-function createFormulaSheetCard(title, description, formulas) {
+function createFormulaSheetCard(sheet) {
     const formulaContainer = document.querySelector(".your-sheets .sheet-container");
 
     const newCard = document.createElement("div");
@@ -50,9 +45,18 @@ function createFormulaSheetCard(title, description, formulas) {
 
     newCard.innerHTML = `
         <div class="sheet-preview"></div>
-        <h3 class="sheet-title">${title}</h3>
-        <p class="sheet-description">${description}</p>
+        <h3 class="sheet-title">${sheet.title}</h3>
+        <p class="sheet-description">${sheet.description}</p>
     `;
+
+    newCard.addEventListener("click", () => {
+        window.location.href = `sheet.html?id=${sheet.id}`;
+    });
 
     formulaContainer.appendChild(newCard);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedSheets = JSON.parse(localStorage.getItem("formulaSheets")) || [];
+    savedSheets.forEach(sheet => createFormulaSheetCard(sheet));
+});

@@ -23,44 +23,38 @@ function addFormula() {
     }
 }
 
-// Handle form submission with validation
-document.getElementById("formulaSheetForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form from reloading the page
-
+// Create and add a formula sheet to "Your Formula Sheets"
+function createAndAddFormulaSheet() {
     const title = document.getElementById("title").value.trim();
     const description = document.getElementById("description").value.trim();
+    const formulas = Array.from(document.querySelectorAll("#formulaList li")).map(li => li.textContent);
 
-    if (title && description) {
-        alert("Formula sheet created successfully! Title: " + title + " | Description: " + description);
+    if (title && description && formulas.length > 0) {
+        createFormulaSheetCard(title, description, formulas);
+        alert("Formula sheet created successfully!");
+
+        // Reset the form and formula list
+        document.getElementById("formulaSheetForm").reset();
+        document.getElementById("formulaList").innerHTML = "";
+
         closeModal();
     } else {
-        alert("Please fill out all fields.");
+        alert("Please fill out all fields and add at least one formula.");
     }
-});
-
-// Search functionality with debounce for "Your Sheets" and "Community Sheets"
-const searchInput = document.querySelector(".search-input");
-if (searchInput) {
-    let debounceTimer;
-    searchInput.addEventListener("keyup", function () {
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(() => {
-            const searchTerm = searchInput.value.toLowerCase();
-            const sheets = document.querySelectorAll(".sheet-card");
-
-            sheets.forEach(sheet => {
-                const title = sheet.querySelector(".sheet-title").innerText.toLowerCase();
-                const description = sheet.querySelector(".sheet-description").innerText.toLowerCase();
-                sheet.style.display = (title.includes(searchTerm) || description.includes(searchTerm)) ? "block" : "none";
-            });
-        }, 300);  // Debounce delay of 300ms
-    });
 }
 
-// Placeholder for filter button functionality
-const filterBtn = document.querySelector(".search-btn");
-if (filterBtn) {
-    filterBtn.addEventListener("click", function () {
-        alert("Filter functionality coming soon! This will allow filtering by subject, date, etc.");
-    });
+// Create and display a formula sheet card in "Your Formula Sheets"
+function createFormulaSheetCard(title, description, formulas) {
+    const formulaContainer = document.querySelector(".your-sheets .sheet-container");
+
+    const newCard = document.createElement("div");
+    newCard.classList.add("sheet-card");
+
+    newCard.innerHTML = `
+        <div class="sheet-preview"></div>
+        <h3 class="sheet-title">${title}</h3>
+        <p class="sheet-description">${description}</p>
+    `;
+
+    formulaContainer.appendChild(newCard);
 }

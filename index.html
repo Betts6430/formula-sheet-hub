@@ -28,33 +28,7 @@
     <!-- Your Formula Sheets Section -->
     <section class="your-sheets">
       <h2>Your Formula Sheets</h2>
-      <div class="sheet-container">
-        <div class="sheet-card">
-          <div class="sheet-preview"></div>
-          <h3 class="sheet-title">MATH 201</h3>
-          <p class="sheet-description">Integrals, derivatives, etc.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-preview"></div>
-          <h3 class="sheet-title">Physics Formula Sheet</h3>
-          <p class="sheet-description">Forces and hydraulics</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-preview"></div>
-          <h3 class="sheet-title">Python Cheatsheet</h3>
-          <p class="sheet-description">Functions, methods, etc.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-preview"></div>
-          <h3 class="sheet-title">Electrical Circuits</h3>
-          <p class="sheet-description">Basic circuit laws</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-preview"></div>
-          <h3 class="sheet-title">Thermodynamics</h3>
-          <p class="sheet-description">Laws of thermodynamics</p>
-        </div>
-      </div>
+      <div class="sheet-container"></div> <!-- Removed hardcoded cards -->
       <a href="your-sheets.html" class="see-more">See More</a>
     </section>
 
@@ -110,6 +84,9 @@
 
         <h3>Formulas:</h3>
         <ul id="formulaList"></ul>
+
+        <!-- New Button to Create the Formula Sheet -->
+        <button type="button" onclick="createAndAddFormulaSheet()">Create Formula Sheet</button>
       </form>
     </div>
   </div>

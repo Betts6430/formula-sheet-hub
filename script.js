@@ -18,8 +18,6 @@ function addFormula() {
         li.textContent = formulaInput.value;
         formulaList.appendChild(li);
         formulaInput.value = ""; // Clear the input field
-    } else {
-        alert("Please enter a valid formula.");
     }
 }
 

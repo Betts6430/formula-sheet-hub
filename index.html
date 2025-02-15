@@ -10,12 +10,11 @@
 <body>
   <header class="header">
     <div class="logo">
-        <img src="assets/icons/flask-icon.png" alt="Formula Sheet Hub Icon" class="logo-icon">
-        Formula Sheet Hub
+      <img src="assets/icons/flask-icon.png" alt="Formula Sheet Hub Icon" class="logo-icon">
+      Formula Sheet Hub
     </div>
-    <button class="create-btn">+ Create a formula sheet</button>
+    <button class="create-btn" onclick="openModal()">+ Create a formula sheet</button>
   </header>
-
 
   <main>
     <!-- Search Bar -->
@@ -26,53 +25,95 @@
       </button>
     </section>
 
-
     <!-- Your Formula Sheets Section -->
     <section class="your-sheets">
-        <h2>Your Formula Sheets</h2>
-        <div class="sheet-container-wrapper">
-          <div class="sheet-container">
-            <div class="sheet-card">
-              <div class="sheet-preview"></div>
-              <h3 class="sheet-title">MATH 201</h3>
-              <p class="sheet-description">Integrals, derivatives, etc.</p>
-            </div>
-            <div class="sheet-card">
-              <div class="sheet-preview"></div>
-              <h3 class="sheet-title">Physics formula sheet</h3>
-              <p class="sheet-description">Forces and hydraulics</p>
-            </div>
-            <div class="sheet-card">
-              <div class="sheet-preview"></div>
-              <h3 class="sheet-title">Python Cheatsheet</h3>
-              <p class="sheet-description">Functions, methods, etc.</p>
-            </div>
-            <div class="sheet-card">
-              <div class="sheet-preview"></div>
-              <h3 class="sheet-title">Blah blah</h3>
-              <p class="sheet-description">Blah blah blah</p>
-            </div>
-            <div class="sheet-card">
-              <div class="sheet-preview"></div>
-              <h3 class="sheet-title">Blah blah</h3>
-              <p class="sheet-description">Blah blah blah</p>
-            </div>
-            <div class="sheet-card">
-              <div class="sheet-preview"></div>
-              <h3 class="sheet-title">Blah blah</h3>
-              <p class="sheet-description">Blah blah blah</p>
-            </div>
-          </div>
-          <a href="#" class="see-more">See More</a>
+      <h2>Your Formula Sheets</h2>
+      <div class="sheet-container">
+        <div class="sheet-card">
+          <div class="sheet-preview"></div>
+          <h3 class="sheet-title">MATH 201</h3>
+          <p class="sheet-description">Integrals, derivatives, etc.</p>
         </div>
-      </section>
-     
-
+        <div class="sheet-card">
+          <div class="sheet-preview"></div>
+          <h3 class="sheet-title">Physics Formula Sheet</h3>
+          <p class="sheet-description">Forces and hydraulics</p>
+        </div>
+        <div class="sheet-card">
+          <div class="sheet-preview"></div>
+          <h3 class="sheet-title">Python Cheatsheet</h3>
+          <p class="sheet-description">Functions, methods, etc.</p>
+        </div>
+        <div class="sheet-card">
+          <div class="sheet-preview"></div>
+          <h3 class="sheet-title">Electrical Circuits</h3>
+          <p class="sheet-description">Basic circuit laws</p>
+        </div>
+        <div class="sheet-card">
+          <div class="sheet-preview"></div>
+          <h3 class="sheet-title">Thermodynamics</h3>
+          <p class="sheet-description">Laws of thermodynamics</p>
+        </div>
+      </div>
+      <a href="your-sheets.html" class="see-more">See More</a>
+    </section>
 
     <!-- Community Formula Sheets Section -->
     <section class="community-sheets">
       <h2>Community Formula Sheets</h2>
+      <div class="sheet-container">
+        <div class="sheet-card">
+          <div class="sheet-preview"></div>
+          <h3 class="sheet-title">Calculus Basics</h3>
+          <p class="sheet-description">Limits, derivatives, integrals</p>
+        </div>
+        <div class="sheet-card">
+          <div class="sheet-preview"></div>
+          <h3 class="sheet-title">Chemistry Formula Sheet</h3>
+          <p class="sheet-description">Molecular structures</p>
+        </div>
+        <div class="sheet-card">
+          <div class="sheet-preview"></div>
+          <h3 class="sheet-title">JavaScript Guide</h3>
+          <p class="sheet-description">Loops, functions, arrays</p>
+        </div>
+        <div class="sheet-card">
+          <div class="sheet-preview"></div>
+          <h3 class="sheet-title">Statistics</h3>
+          <p class="sheet-description">Probability, distributions</p>
+        </div>
+        <div class="sheet-card">
+          <div class="sheet-preview"></div>
+          <h3 class="sheet-title">Linear Algebra</h3>
+          <p class="sheet-description">Vectors and matrices</p>
+        </div>
+      </div>
+      <a href="community-sheets.html" class="see-more">See More</a>
     </section>
   </main>
+
+  <!-- Modal for Creating a Formula Sheet -->
+  <div id="createSheetModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>Create a Formula Sheet</h2>
+      <form id="formulaSheetForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter sheet title..." required>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" placeholder="Enter a short description..." required>
+
+        <label for="formula">Enter a Formula:</label>
+        <input type="text" id="formulaInput" name="formula" placeholder="Type a formula...">
+        <button type="button" onclick="addFormula()">Add Formula</button>
+
+        <h3>Formulas:</h3>
+        <ul id="formulaList"></ul>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

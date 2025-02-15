@@ -1,0 +1,9 @@
+{
+    "title": "Physics Formulas",
+    "description": "Key formulas for mechanics and thermodynamics",
+    "topics": {
+      "Mechanics": ["F = ma", "v = u + at", "W = Fd"],
+      "Thermodynamics": ["PV = nRT", "Q = mcΔT", "E = mc^2"],
+      "Electromagnetism": ["V = IR", "F = qE", "B = μ0I/2πr"]
+    }
+  }

@@ -83,8 +83,11 @@
         <input type="text" id="description" name="description" placeholder="Enter a short description..." required>
 
         <label for="formula">Enter a Formula:</label>
-        <input type="text" id="formulaInput" name="formula" placeholder="Type a formula...">
-        <button type="button" onclick="addFormula()">Add Formula</button>
+        <div class="formula-input-wrapper">
+          <input type="text" id="formulaInput" name="formula" placeholder="Type a formula...">
+          <button type="button" class="add-formula-btn" onclick="addFormula()">+</button>
+        </div>
+
 
         <h3>Formulas:</h3>
         <ul id="formulaList"></ul>

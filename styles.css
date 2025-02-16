@@ -203,8 +203,9 @@ body {
   
   .modal input[type="text"] {
     width: 98%; /* Reduce width to create a right margin */
-    padding: 8px;
+    padding: 10px;
     font-size: 16px;
+    height: 42px;
     border: 1px solid #444;
     border-radius: 5px;
     background-color: #1a1a1a;
@@ -260,6 +261,47 @@ body {
   }
   
   .create-formula-btn:hover {
+    background-color: #357ab7;
+  }
+
+  .formula-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between the input box and the + button */
+    width: 98%;
+  }
+  
+  #formulaInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: white;
+    height: 42px;
+    box-sizing: border-box;
+  }
+  
+  .add-formula-btn {
+    background-color: #4a90e2;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 42px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-6px);
+    transition: background-color 0.2s ease;
+  }
+  
+  .add-formula-btn:hover {
     background-color: #357ab7;
   }
   

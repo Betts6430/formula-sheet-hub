@@ -184,6 +184,7 @@ body {
     color: white;
     cursor: pointer;
     z-index: 10;
+    transition: #f04a4a 0.2s ease;
   }
 
   .close-btn:hover {

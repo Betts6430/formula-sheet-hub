@@ -26,8 +26,12 @@
   <div id="createSheetModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
-      <h2>Create a Formula Sheet</h2>
+      <div class="modal-header">
+        <h2>Create a Formula Sheet</h2>
+        <button type="submit" class="create-formula-btn" onclick="createAndAddFormulaSheet()">Create</button>
+      </div>
       <form id="formulaSheetForm">
+      
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" placeholder="Enter sheet title..." required>
 
@@ -45,6 +49,7 @@
           <button type="button" onclick="editSelectedFormula()">Edit Selected</button>
         </div>
 
+        <!-- New Button to Create the Formula Sheet -->
         <button type="button" onclick="createAndAddFormulaSheet()">Create Formula Sheet</button>
       </form>
     </div>

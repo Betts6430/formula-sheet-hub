@@ -7,6 +7,18 @@ function closeModal() {
     document.getElementById("createSheetModal").removeAttribute("data-editing");
 }
 
+
+// Detect Enter key press in the formula input
+document.getElementById("formulaInput").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent the form from submitting
+      addFormula(); // Call the addFormula function
+    }
+  });
+  
+
+// Add a formula to the formula list
+
 function addFormula() {
     const formulaInput = document.getElementById("formulaInput");
     const formulaList = document.getElementById("formulaList");
@@ -49,6 +61,13 @@ function createAndAddFormulaSheet() {
     const formulas = Array.from(document.querySelectorAll("#formulaList li .formula-text")).map(span => span.textContent);
 
     if (title && description && formulas.length > 0) {
+        createFormulaSheetCard(title, description, formulas);
+        alert("Formula sheet created successfully!");  //REMOVE LATER
+        const id = Date.now().toString();
+        const newSheet = { id, title, description, formulas };
+        const existingSheets = JSON.parse(localStorage.getItem("formulaSheets")) || [];
+        existingSheets.push(newSheet);
+        localStorage.setItem("formulaSheets", JSON.stringify(existingSheets));
         const editingId = document.getElementById("createSheetModal").dataset.editing;
         let savedSheets = JSON.parse(localStorage.getItem("formulaSheets")) || [];
 

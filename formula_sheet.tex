@@ -1,0 +1,166 @@
+
+        \documentclass[10pt]{article}
+        \usepackage{amsmath}  % For advanced math features
+        \usepackage{amsfonts} % For math fonts
+        \usepackage{amssymb}  % For extra symbols
+        \usepackage{geometry} % To adjust page margins
+        \usepackage{multicol} % For multi-column layout
+        \usepackage{parskip}  % Removes extra space between paragraphs
+        \usepackage{titlesec} % For customizing section and subsection styles
+        \usepackage{enumitem} % Package for customizing lists
+
+        % Adjust page margins to minimize wasted space
+        \geometry{top=0.3in, bottom=0.3in,left=0.3in, right=0.3in}
+        % Set the page style to have no page numbers
+        \pagestyle{empty}
+
+        % Reduces the space between equations
+        \setlength{\jot}{1pt}
+
+        % Customize section and subsection formatting
+        \titleformat{\subsection}[runin]{\normalfont\bfseries\small}{\thesubsection}{1em}{}
+
+        % Adjust column balancing and space
+        \setlength{\columnsep}{3pt}  % Controls the space between columns
+        \setlength{\columnseprule}{0pt}  % Remove the line between columns
+        
+        \renewcommand{\labelitemi}{\tiny$\bullet$}
+        % Adjust the space between bullet and text
+        \setlist[itemize]{labelsep=1pt}  % Controls space between the bullet and the text
+        \setlist[itemize,1]{left=0.5pt}    % Controls indentation of bullet points
+        \begin{document}
+        \begin{multicols*}{3}  % Start three-column layout
+\section*{Physics Formulas}\subsection*{Mechanics}
+\begin{itemize}\footnotesize
+        \item $F = ma$
+\item[] Newton's second law of motion
+\item $v = u + at$
+\item[] Equation for final velocity under constant acceleration
+\item $a = \frac{dv}{dt}$
+\item[] Definition of acceleration
+\item $s = ut + \frac{1}{2} a t^2$
+\item[] Equation for displacement under constant acceleration
+\item $v^2 = u^2 + 2as$
+\item[] Equation for velocity squared
+\end{itemize}
+        \subsection*{Thermodynamics}
+\begin{itemize}\footnotesize
+        \item $PV = nRT$
+\item[] Ideal gas law
+\item $Q = mc\Delta T$
+\item[] Equation for heat transfer
+\item $E = mc^2$
+\item[] Einstein's mass-energy equivalence
+\item $W = P \Delta V$
+\item[] Work done by a gas in an isobaric process
+\item $S = k_B \ln \Omega$
+\item[] Boltzmann entropy formula
+\end{itemize}
+        \subsection*{Electromagnetism}
+\begin{itemize}\footnotesize
+        \item $V = IR$
+\item[] Ohm's law
+\item $F = qE$
+\item[] Force on a charge in an electric field
+\item $B = \frac{\mu_0 I}{2\pi r}$
+\item[] Magnetic field due to a current-carrying wire (Biot-Savart Law)
+\item $F = q(v \times B)$
+\item[] Lorentz force equation
+\item $E = - \frac{dB}{dt}$
+\item[] Faraday's law of induction
+\end{itemize}
+        \subsection*{Optics}
+\begin{itemize}\footnotesize
+        \item $n = \frac{c}{v}$
+\item[] Refractive index formula
+\item $1/f = \frac{1}{d_o} + \frac{1}{d_i}$
+\item[] Lens formula
+\item $\theta_c = \sin^{-1} \left( \frac{n_2}{n_1} \right)$
+\item[] Critical angle for total internal reflection
+\item $I = I_0 \cos^2 \theta$
+\item[] Malus's law for intensity of polarized light
+\item $m = \frac{h}{\lambda}$
+\item[] De Broglie wavelength formula
+\end{itemize}
+        \subsection*{Fluid Mechanics}
+\begin{itemize}\footnotesize
+        \item $\rho = \frac{m}{V}$
+\item[] Density formula
+\item $F = \rho g V$
+\item[] Buoyant force formula
+\item $v = \frac{Q}{A}$
+\item[] Flow velocity in a pipe (continuity equation)
+\item $P = \frac{F}{A}$
+\item[] Pressure formula
+\item $\Delta P = R Q$
+\item[] Poiseuille's law for fluid flow in pipes
+\end{itemize}
+        \subsection*{Modern Physics}
+\begin{itemize}\footnotesize
+        \item $E = hf$
+\item[] Energy of a photon
+\item $\lambda = \frac{h}{p}$
+\item[] De Broglie wavelength for particles
+\item $\alpha = \frac{e^2}{4\pi\epsilon_0\hbar c}$
+\item[] Fine-structure constant
+\item $p = \gamma mv$
+\item[] Relativistic momentum formula
+\item $t = \frac{t_0}{\sqrt{1 - v^2/c^2}}$
+\item[] Time dilation in special relativity
+\end{itemize}
+        \subsection*{Waves}
+\begin{itemize}\footnotesize
+        \item $v = f \lambda$
+\item[] Wave velocity formula
+\item $T = \frac{1}{f}$
+\item[] Period of a wave
+\item $v = v_0 + at$
+\item[] Equation for the velocity of a moving wave
+\item $I = \frac{P}{A}$
+\item[] Intensity of a wave
+\item $\Delta x \Delta p = \frac{h}{2}$
+\item[] Heisenberg's uncertainty principle
+\end{itemize}
+        \subsection*{Astrophysics}
+\begin{itemize}\footnotesize
+        \item $F = G \frac{m_1 m_2}{r^2}$
+\item[] Newton's law of gravitation
+\item $T = \frac{2 \pi}{\omega}$
+\item[] Orbital period for a circular orbit
+\item $L = r^2 \omega$
+\item[] Angular momentum of a rotating object
+\item $v = \sqrt{GM/r}$
+\item[] Orbital velocity of a satellite
+\item $E = - \frac{GMm}{2r}$
+\item[] Gravitational potential energy of an object in orbit
+\end{itemize}
+        \subsection*{Quantum Mechanics}
+\begin{itemize}\footnotesize
+        \item $E = - \frac{13.6}{n^2} \text{ eV}$
+\item[] Energy levels of hydrogen atom
+\item $\Psi = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}$
+\item[] Wave function of a quantum harmonic oscillator
+\item $\lambda = \frac{h}{p}$
+\item[] De Broglie wavelength formula
+\item $H\Psi = E\Psi$
+\item[] Time-independent Schrödinger equation
+\item $p = mv$
+\item[] Classical momentum formula
+\end{itemize}
+        \subsection*{Relativity}
+\begin{itemize}\footnotesize
+        \item $E^2 = (pc)^2 + (mc^2)^2$
+\item[] Energy-momentum relation
+\item $m = \frac{m_0}{\sqrt{1 - v^2/c^2}}$
+\item[] Relativistic mass formula
+\item $F = \gamma^3 F_0$
+\item[] Relativistic force formula
+\item $t' = \frac{t}{\sqrt{1 - v^2/c^2}}$
+\item[] Time dilation for moving observers
+\item $x' = \gamma (x - vt)$
+\item[] Relativistic position transformation
+\end{itemize}
+        
+    \end{multicols*}
+    \end{document}
+    

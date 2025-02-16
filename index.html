@@ -17,56 +17,12 @@
   </header>
 
   <main>
-    <!-- Search Bar -->
-    <section class="search-section">
-      <input type="text" class="search-input" placeholder="Search for formula sheets...">
-      <button class="search-btn">
-        <img src="assets/icons/filter-icon.png" alt="Search Icon" class="filter-icon">
-      </button>
-    </section>
-
-    <!-- Your Formula Sheets Section -->
     <section class="your-sheets">
       <h2>Your Formula Sheets</h2>
-      <div class="sheet-container"></div> <!-- Removed hardcoded cards -->
-      <a href="your-sheets.html" class="see-more">See More</a>
-    </section>
-
-    <!-- Community Formula Sheets Section -->
-    <section class="community-sheets">
-      <h2>Community Formula Sheets</h2>
-      <div class="sheet-container">
-        <div class="sheet-card">
-          <div class="sheet-preview"></div>
-          <h3 class="sheet-title">Calculus Basics</h3>
-          <p class="sheet-description">Limits, derivatives, integrals</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-preview"></div>
-          <h3 class="sheet-title">Chemistry Formula Sheet</h3>
-          <p class="sheet-description">Molecular structures</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-preview"></div>
-          <h3 class="sheet-title">JavaScript Guide</h3>
-          <p class="sheet-description">Loops, functions, arrays</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-preview"></div>
-          <h3 class="sheet-title">Statistics</h3>
-          <p class="sheet-description">Probability, distributions</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-preview"></div>
-          <h3 class="sheet-title">Linear Algebra</h3>
-          <p class="sheet-description">Vectors and matrices</p>
-        </div>
-      </div>
-      <a href="community-sheets.html" class="see-more">See More</a>
+      <div class="sheet-container"></div>
     </section>
   </main>
 
-  <!-- Modal for Creating a Formula Sheet -->
   <div id="createSheetModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -84,8 +40,11 @@
 
         <h3>Formulas:</h3>
         <ul id="formulaList"></ul>
+        <div class="formula-actions">
+          <button type="button" onclick="removeSelectedFormulas()">Remove Selected</button>
+          <button type="button" onclick="editSelectedFormula()">Edit Selected</button>
+        </div>
 
-        <!-- New Button to Create the Formula Sheet -->
         <button type="button" onclick="createAndAddFormulaSheet()">Create Formula Sheet</button>
       </form>
     </div>

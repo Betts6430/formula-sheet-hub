@@ -1,0 +1,75 @@
+{
+  "title": "Physics Formulas",
+  "topics": {
+    "Mechanics": [
+      ["F = ma", "Newton's second law of motion"],
+      ["v = u + at", "Equation for final velocity under constant acceleration"],
+      ["a = \\frac{dv}{dt}", "Definition of acceleration"],
+      ["s = ut + \\frac{1}{2} a t^2", "Equation for displacement under constant acceleration"],
+      ["v^2 = u^2 + 2as", "Equation for velocity squared"]
+    ],
+    "Thermodynamics": [
+      ["PV = nRT", "Ideal gas law"],
+      ["Q = mc\\Delta T", "Equation for heat transfer"],
+      ["E = mc^2", "Einstein's mass-energy equivalence"],
+      ["W = P \\Delta V", "Work done by a gas in an isobaric process"],
+      ["S = k_B \\ln \\Omega", "Boltzmann entropy formula"]
+    ],
+    "Electromagnetism": [
+      ["V = IR", "Ohm's law"],
+      ["F = qE", "Force on a charge in an electric field"],
+      ["B = \\frac{\\mu_0 I}{2\\pi r}", "Magnetic field due to a current-carrying wire (Biot-Savart Law)"],
+      ["F = q(v \\times B)", "Lorentz force equation"],
+      ["E = - \\frac{dB}{dt}", "Faraday's law of induction"]
+    ],
+    "Optics": [
+      ["n = \\frac{c}{v}", "Refractive index formula"],
+      ["1/f = \\frac{1}{d_o} + \\frac{1}{d_i}", "Lens formula"],
+      ["\\theta_c = \\sin^{-1} \\left( \\frac{n_2}{n_1} \\right)", "Critical angle for total internal reflection"],
+      ["I = I_0 \\cos^2 \\theta", "Malus's law for intensity of polarized light"],
+      ["m = \\frac{h}{\\lambda}", "De Broglie wavelength formula"]
+    ],
+    "Fluid Mechanics": [
+      ["\\rho = \\frac{m}{V}", "Density formula"],
+      ["F = \\rho g V", "Buoyant force formula"],
+      ["v = \\frac{Q}{A}", "Flow velocity in a pipe (continuity equation)"],
+      ["P = \\frac{F}{A}", "Pressure formula"],
+      ["\\Delta P = R Q", "Poiseuille's law for fluid flow in pipes"]
+    ],
+    "Modern Physics": [
+      ["E = hf", "Energy of a photon"],
+      ["\\lambda = \\frac{h}{p}", "De Broglie wavelength for particles"],
+      ["\\alpha = \\frac{e^2}{4\\pi\\epsilon_0\\hbar c}", "Fine-structure constant"],
+      ["p = \\gamma mv", "Relativistic momentum formula"],
+      ["t = \\frac{t_0}{\\sqrt{1 - v^2/c^2}}", "Time dilation in special relativity"]
+    ],
+    "Waves": [
+      ["v = f \\lambda", "Wave velocity formula"],
+      ["T = \\frac{1}{f}", "Period of a wave"],
+      ["v = v_0 + at", "Equation for the velocity of a moving wave"],
+      ["I = \\frac{P}{A}", "Intensity of a wave"],
+      ["\\Delta x \\Delta p = \\frac{h}{2}", "Heisenberg's uncertainty principle"]
+    ],
+    "Astrophysics": [
+      ["F = G \\frac{m_1 m_2}{r^2}", "Newton's law of gravitation"],
+      ["T = \\frac{2 \\pi}{\\omega}", "Orbital period for a circular orbit"],
+      ["L = r^2 \\omega", "Angular momentum of a rotating object"],
+      ["v = \\sqrt{GM/r}", "Orbital velocity of a satellite"],
+      ["E = - \\frac{GMm}{2r}", "Gravitational potential energy of an object in orbit"]
+    ],
+    "Quantum Mechanics": [
+      ["E = - \\frac{13.6}{n^2} \\text{ eV}", "Energy levels of hydrogen atom"],
+      ["\\Psi = \\frac{1}{\\sqrt{2\\pi}} e^{-x^2/2}", "Wave function of a quantum harmonic oscillator"],
+      ["\\lambda = \\frac{h}{p}", "De Broglie wavelength formula"],
+      ["H\\Psi = E\\Psi", "Time-independent Schrödinger equation"],
+      ["p = mv", "Classical momentum formula"]
+    ],
+    "Relativity": [
+      ["E^2 = (pc)^2 + (mc^2)^2", "Energy-momentum relation"],
+      ["m = \\frac{m_0}{\\sqrt{1 - v^2/c^2}}", "Relativistic mass formula"],
+      ["F = \\gamma^3 F_0", "Relativistic force formula"],
+      ["t' = \\frac{t}{\\sqrt{1 - v^2/c^2}}", "Time dilation for moving observers"],
+      ["x' = \\gamma (x - vt)", "Relativistic position transformation"]
+    ]
+  }
+}

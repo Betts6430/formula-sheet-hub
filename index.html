@@ -16,6 +16,7 @@
     <button class="create-btn" onclick="openModal()">+ Create a formula sheet</button>
   </header>
 
+
   <main>
     <!-- Search Bar -->
     <section class="search-section">
@@ -25,12 +26,14 @@
       </button>
     </section>
 
+
     <!-- Your Formula Sheets Section -->
     <section class="your-sheets">
       <h2>Your Formula Sheets</h2>
       <div class="sheet-container"></div> <!-- Removed hardcoded cards -->
       <a href="your-sheets.html" class="see-more">See More</a>
     </section>
+
 
     <!-- Community Formula Sheets Section -->
     <section class="community-sheets">
@@ -66,6 +69,7 @@
     </section>
   </main>
 
+
   <!-- Modal for Creating a Formula Sheet -->
   <div id="createSheetModal" class="modal">
     <div class="modal-content">
@@ -75,12 +79,14 @@
         <button type="submit" class="create-formula-btn" onclick="createAndAddFormulaSheet()">Create</button>
       </div>
       <form id="formulaSheetForm">
-      
+     
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" placeholder="Enter sheet title..." required>
 
+
         <label for="description">Description:</label>
         <input type="text" id="description" name="description" placeholder="Enter a short description..." required>
+
 
         <label for="formula">Enter a Formula:</label>
         <div class="formula-input-wrapper">
@@ -89,32 +95,35 @@
         </div>
 
 
+
+
         <h3>Formulas:</h3>
         <ul id="formulaList"></ul>
         <div id="bulkActions" class="bulk-actions">
           <button id="deleteSelected" class="bulk-btn delete-btn">Delete Selected</button>
           <button id="addToCategory" class="bulk-btn category-btn">Add to Category</button>
         </div>
+       
         
-  <!-- Category Modal -->
-  <div id="categoryModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeCategoryModal()">&times;</span>
-      <h2>Select a Category</h2>
-      <div id="categoryList"></div>
-      <input type="text" id="newCategoryInput" placeholder="Add new category...">
-      <button id="addCategoryBtn">Add Category</button>
-    </div>
-  </div>
-  
 
-        
-        
 
       </form>
     </div>
   </div>
 
+  <!-- Add Category Modal -->
+  <div id="categoryModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeCategoryModal()">&times;</span>
+      <h2>Select a Category</h2>
+      <button class="create-category-btn" onclick="createNewCategory()">+ Create New Category</button>
+      <ul id="categoryList"></ul>
+    </div>
+  </div>
+
+
+
   <script src="script.js"></script>
 </body>
 </html>
+

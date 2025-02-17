@@ -533,3 +533,50 @@ h2 {
 #categoryList li:hover {
   background-color: #4a90e2;
 }
+
+/* Extra Info Section (Page # and Style) */
+.extra-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.pages-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.pages-section input {
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  color: white;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  width: 120px;
+}
+
+.style-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.style-options {
+  display: flex;
+  gap: 15px;
+}
+
+.style-options label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.style-options input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}

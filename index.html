@@ -87,6 +87,22 @@
         <label for="description">Description:</label>
         <input type="text" id="description" name="description" placeholder="Enter a short description..." required>
 
+        <!-- Additional Information Section -->
+        <div class="extra-info">
+          <div class="pages-section">
+            <label for="numPages">Page #</label>
+            <input type="number" id="numPages" name="numPages" placeholder="# of pages..." min="1">
+          </div>
+          
+          <div class="style-section">
+            <label>Style</label>
+            <div class="style-options">
+              <label><input type="checkbox" name="style" value="1-column"> 1 column</label>
+              <label><input type="checkbox" name="style" value="2-columns"> 2 columns</label>
+              <label><input type="checkbox" name="style" value="3-columns"> 3 columns</label>
+            </div>
+          </div>
+        </div>
 
         <label for="formula">Enter a Formula:</label>
         <div class="formula-input-wrapper">

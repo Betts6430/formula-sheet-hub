@@ -1,9 +1,9 @@
 import subprocess
 import json
+#from pdf2image import convert_from_path
 
 
-
-def generate_latex_content(data,margin,section):
+def generate_latex_content(data,margin,section,line): #margin size horizontally - section is how many colomns to divide the page into
     print(data)
     
     latex_content_format1 = r"""
@@ -32,8 +32,8 @@ def generate_latex_content(data,margin,section):
 
         % Adjust column balancing and space
         \setlength{\columnsep}{3pt}  % Controls the space between columns
-        \setlength{\columnseprule}{0pt}  % Remove the line between columns
-        
+    """
+    latex_content_format1 += r"""\setlength{\columnseprule}{""" + str(line) + r"""pt}  % Remove the line between columns    
         \renewcommand{\labelitemi}{\tiny$\bullet$}
         % Adjust the space between bullet and text
         \setlist[itemize]{labelsep=1pt}  % Controls space between the bullet and the text
@@ -68,7 +68,7 @@ if __name__ == "__main__":
     with open("test_input.json", "r") as file:
         data = json.load(file)  # Converts JSON to a Python dictionary
     with open('formula_sheet.tex', 'w') as file:
-        file.write(generate_latex_content(data,0.3,3))
+        file.write(generate_latex_content(data,0.5,3,0))
 
     print("LaTeX file created successfully!")
 

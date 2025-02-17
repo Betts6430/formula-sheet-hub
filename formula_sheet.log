@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.2.15)  16 FEB 2025 11:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.2.15)  16 FEB 2025 11:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -232,20 +232,20 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 (./formula_sheet.aux)
 \openout1 = `formula_sheet.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -255,14 +255,14 @@ LaTeX Font Info:    ... okay on input line 31.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(21.68121pt, 570.93257pt, 21.68121pt)
+* h-part:(L,W,R)=(36.135pt, 542.02501pt, 36.135pt)
 * v-part:(T,H,B)=(21.68121pt, 751.60756pt, 21.68121pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=570.93257pt
+* \textwidth=542.02501pt
 * \textheight=751.60756pt
-* \oddsidemargin=-50.58878pt
-* \evensidemargin=-50.58878pt
+* \oddsidemargin=-36.135pt
+* \evensidemargin=-36.135pt
 * \topmargin=-87.58878pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -281,12 +281,12 @@ LaTeX Font Info:    ... okay on input line 31.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -300,7 +300,7 @@ pdfTeX warning: pdflatex (file pdftex.map): cannot open font map file
 Here is how much of TeX's memory you used:
  3723 strings out of 480247
  56292 string characters out of 5896151
- 393535 words of memory out of 5000000
+ 393519 words of memory out of 5000000
  21655 multiletter control sequences out of 15000+600000
  474225 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -318,7 +318,7 @@ ic/cm/cmmi6.600pk> </usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi
 8.600pk> </home/abdou/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmsy5.60
 0pk> </home/abdou/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx9.600pk>
  </home/abdou/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.720pk>
-Output written on formula_sheet.pdf (1 page, 57817 bytes).
+Output written on formula_sheet.pdf (1 page, 57904 bytes).
 PDF statistics:
  249 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream

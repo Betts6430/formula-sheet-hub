@@ -79,3 +79,4 @@ def run_program():
     subprocess.run(["pdflatex", "formula_sheet.tex"])
     return jsonify({"message": "JSON file loaded and compiled to pdf successfully!"})
 
+app.run()

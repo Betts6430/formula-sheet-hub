@@ -1,9 +1,13 @@
 import subprocess
 import json
+from flask import Flask, request, jsonify
+#from pdf2image import convert_from_path
+
+app = Flask('app')
 
 
 
-def generate_latex_content(data,margin,section):
+def generate_latex_content(data,margin,section,line): #margin size horizontally - section is how many colomns to divide the page into
     print(data)
     
     latex_content_format1 = r"""
@@ -32,8 +36,8 @@ def generate_latex_content(data,margin,section):
 
         % Adjust column balancing and space
         \setlength{\columnsep}{3pt}  % Controls the space between columns
-        \setlength{\columnseprule}{0pt}  % Remove the line between columns
-        
+    """
+    latex_content_format1 += r"""\setlength{\columnseprule}{""" + str(line) + r"""pt}  % Remove the line between columns    
         \renewcommand{\labelitemi}{\tiny$\bullet$}
         % Adjust the space between bullet and text
         \setlist[itemize]{labelsep=1pt}  % Controls space between the bullet and the text
@@ -42,13 +46,12 @@ def generate_latex_content(data,margin,section):
         """
     latex_content_format1 += r"\begin{multicols*}" + f"{{{section}}}  % Start three-column layout\n"
 
-        
-    
     latex_content_format1 += f"\section*{{{data['title']}}}"
 
     for topic in data['topics']:
         print(topic)
-        latex_content_format1 += f"\subsection*{{{topic}}}\n"
+        if topic != "Uncategorized":
+            latex_content_format1 += f"\subsection*{{{topic}}}\n"
         latex_content_format1 += r"""\begin{itemize}\footnotesize
         """
         for equation in data['topics'][topic]:
@@ -64,16 +67,16 @@ def generate_latex_content(data,margin,section):
     return latex_content_format1
 
 # Write to a .tex file
-if __name__ == "__main__":
+#if __name__ == "__main__":
+
+
+@app.route('/run-program', methods=['POST'])
+def run_program():
     with open("test_input.json", "r") as file:
         data = json.load(file)  # Converts JSON to a Python dictionary
     with open('formula_sheet.tex', 'w') as file:
-        file.write(generate_latex_content(data,0.3,3))
-
-    print("LaTeX file created successfully!")
-
-
-    # Compile the LaTeX file into a PDF
+        file.write(generate_latex_content(data,0.5,3,0))
     subprocess.run(["pdflatex", "formula_sheet.tex"])
+    return jsonify({"message": "JSON file loaded and compiled to pdf successfully!"})
 
-    print("PDF generated successfully!")
+app.run()

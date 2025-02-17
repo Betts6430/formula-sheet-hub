@@ -1,7 +1,9 @@
 let sheet_information = {
     title: "",
     description: "",
-    categories: {}
+    categories: {},
+    num_pages: 1,
+    style: ""
 };
 
 
@@ -23,7 +25,9 @@ function closeModal() {
     sheet_information = {
         title: "",
         description: "",
-        categories: {}
+        categories: {},
+        num_pages: 1,
+        style: ""
     };
 }
 
@@ -173,6 +177,11 @@ function createAndAddFormulaSheet() {
     // Get the current title and description from input fields
     sheet_information.title = document.getElementById("title").value.trim();
     sheet_information.description = document.getElementById("description").value.trim();
+    sheet_information.num_pages = parseInt(document.getElementById("numPages").value.trim()) || 1; // Default to 1
+
+    // Ensure only one style can be selected at a time
+    const selectedStyle = document.querySelector('input[name="style"]:checked');
+    sheet_information.style = selectedStyle ? selectedStyle.value : "default"; // Default if none selected
 
     // Move unassigned formulas to the "Uncategorized" category
     if (!sheet_information.categories["Uncategorized"]) {

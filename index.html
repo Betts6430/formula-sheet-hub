@@ -97,9 +97,9 @@
           <div class="style-section">
             <label>Style</label>
             <div class="style-options">
-              <label><input type="checkbox" name="style" value="1-column"> 1 column</label>
-              <label><input type="checkbox" name="style" value="2-columns"> 2 columns</label>
-              <label><input type="checkbox" name="style" value="3-columns"> 3 columns</label>
+              <label><input type="radio" name="style" value="1-column"> 1 column</label>
+              <label><input type="radio" name="style" value="2-columns"> 2 columns</label>
+              <label><input type="radio" name="style" value="3-columns"> 3 columns</label>
             </div>
           </div>
         </div>
@@ -110,18 +110,12 @@
           <button type="button" class="add-formula-btn" onclick="addFormula()">+</button>
         </div>
 
-
-
-
         <h3>Formulas:</h3>
         <ul id="formulaList"></ul>
         <div id="bulkActions" class="bulk-actions">
           <button id="deleteSelected" class="bulk-btn delete-btn">Delete Selected</button>
           <button id="addToCategory" class="bulk-btn category-btn">Add to Category</button>
         </div>
-       
-        
-
 
       </form>
     </div>

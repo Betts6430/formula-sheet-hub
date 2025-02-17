@@ -1,6 +1,10 @@
 import subprocess
 import json
+from flask import Flask, request, jsonify
 #from pdf2image import convert_from_path
+
+app = Flask('app')
+
 
 
 def generate_latex_content(data,margin,section,line): #margin size horizontally - section is how many colomns to divide the page into
@@ -64,15 +68,14 @@ def generate_latex_content(data,margin,section,line): #margin size horizontally 
 
 # Write to a .tex file
 #if __name__ == "__main__":
-with open("test_input.json", "r") as file:
-    data = json.load(file)  # Converts JSON to a Python dictionary
-with open('formula_sheet.tex', 'w') as file:
-    file.write(generate_latex_content(data,0.5,3,0))
-
-print("LaTeX file created successfully!")
 
 
-    # Compile the LaTeX file into a PDF
-subprocess.run(["pdflatex", "formula_sheet.tex"])
+@app.route('/run-program', methods=['POST'])
+def run_program():
+    with open("test_input.json", "r") as file:
+        data = json.load(file)  # Converts JSON to a Python dictionary
+    with open('formula_sheet.tex', 'w') as file:
+        file.write(generate_latex_content(data,0.5,3,0))
+    subprocess.run(["pdflatex", "formula_sheet.tex"])
+    return jsonify({"message": "JSON file loaded and compiled to pdf successfully!"})
 
-print("PDF generated successfully!")

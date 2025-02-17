@@ -42,13 +42,12 @@ def generate_latex_content(data,margin,section,line): #margin size horizontally 
         """
     latex_content_format1 += r"\begin{multicols*}" + f"{{{section}}}  % Start three-column layout\n"
 
-        
-    
     latex_content_format1 += f"\section*{{{data['title']}}}"
 
     for topic in data['topics']:
         print(topic)
-        latex_content_format1 += f"\subsection*{{{topic}}}\n"
+        if topic != "Uncategorized":
+            latex_content_format1 += f"\subsection*{{{topic}}}\n"
         latex_content_format1 += r"""\begin{itemize}\footnotesize
         """
         for equation in data['topics'][topic]:
@@ -64,16 +63,16 @@ def generate_latex_content(data,margin,section,line): #margin size horizontally 
     return latex_content_format1
 
 # Write to a .tex file
-if __name__ == "__main__":
-    with open("test_input.json", "r") as file:
-        data = json.load(file)  # Converts JSON to a Python dictionary
-    with open('formula_sheet.tex', 'w') as file:
-        file.write(generate_latex_content(data,0.5,3,0))
+#if __name__ == "__main__":
+with open("test_input.json", "r") as file:
+    data = json.load(file)  # Converts JSON to a Python dictionary
+with open('formula_sheet.tex', 'w') as file:
+    file.write(generate_latex_content(data,0.5,3,0))
 
-    print("LaTeX file created successfully!")
+print("LaTeX file created successfully!")
 
 
     # Compile the LaTeX file into a PDF
-    subprocess.run(["pdflatex", "formula_sheet.tex"])
+subprocess.run(["pdflatex", "formula_sheet.tex"])
 
-    print("PDF generated successfully!")
+print("PDF generated successfully!")

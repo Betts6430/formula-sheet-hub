@@ -219,9 +219,6 @@ function createAndAddFormulaSheet() {
 }
 
 
-
-
-
 function refreshFormulaSheets() {
     const savedSheets = JSON.parse(localStorage.getItem("formulaSheets")) || [];
     const formulaContainer = document.querySelector(".your-sheets .sheet-container");
